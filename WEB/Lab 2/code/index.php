@@ -62,6 +62,30 @@ foreach ($array as $iterator)
 $NOWAY_sum = sqrt($noway_sum);
 echo "$NOWAY_sum<br>";
 
+#Работа с функциями округления
+$opyatkoren = sqrt(379);
+echo round($opyatkoren,0),"<br>";
+echo round($opyatkoren,1),"<br>";
+echo round($opyatkoren,2),"<br>";
+$koren2 = sqrt(587);
+
+$ceilsqrt = ceil($koren2);
+$floorsqrt = floor($koren2);
+$my_perfect_array = array("ceil"=>$ceilsqrt,"floor"=>$floorsqrt);
+
+foreach($my_perfect_array as $item => $num)
+    echo "Type - " . $item . ", Value= " . $num, "<br>";
+
+
+
+
+
+
+
+
+
+
+
 
 
 
