@@ -101,6 +101,27 @@ for ($i = 0; $i < 6;$i++)
     $absarray[$i] = abs($array1[$i]);
 foreach($absarray as $item )
     echo "$item ";
+echo "<br>";
+
+#Task 7. Общее
+$numdivs = array();
+$number1 = 30;
+for ($i = 1; $i < round(sqrt($number1)) + 1; $i++) #проходим до корня числа, чтобы не повторяться
+    if ($number1 % $i == 0)
+        array_push($numdivs, $i, $number1 / $i); #добавляем сам делитель и число/делитель
+foreach($numdivs as $item )
+    echo "$item ";
+echo "<br>";
+
+$array2 = [1,2,3,4,5,6,7,8,9,10];
+$c = 0; $count = 0;
+while($count <= 10)
+{
+    $count += $array2[$c];
+    $c++;
+}
+echo $c,"<br>";
+
 
 
 
