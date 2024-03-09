@@ -14,7 +14,9 @@ $order .= ' but I`m vegan =(';
 // Don't change the line below
 echo "<br>Your order is: $very_bad_unclear_name.<br>";
 
+echo "<br>";
 #Task 2 - Числа
+
 $mypersonalheaven = 666;
 echo $mypersonalheaven; echo "<br>";
 $mypersonalhell = 666.666;
@@ -23,15 +25,19 @@ echo 10-5+7; echo "<br>";
 $last_month = 1187.23; $this_month = 1089.98;
 echo $last_month - $this_month; echo "<br>";
 
+echo "<br>";
+
 #Task 3 - Умножение и деление
 $num_languages = 4;
 $months = 11;
 $days = $months * 16;
 $days_per_language = $days / $num_languages;
 echo $days_per_language; echo "<br>";
+echo "<br>";
 
 #Task 4 - Степень
 echo 8**2; echo "<br>";
+echo "<br>";
 
 #Task 5 - Операторы присвоения
 $my_num = 42;
@@ -39,7 +45,7 @@ $answer = $my_num;
 $answer += 2; $answer *= 2; $answer -= 2; $answer /= 2; # места много занимает ;)
 $answer -= $my_num;
 echo $answer; echo "<br>"; #реально 1...
-
+echo "<br>";
 #Task 6 - Мат. функции
 # Работа с %
 $a = 10; $b = 3;
@@ -102,7 +108,7 @@ for ($i = 0; $i < 6;$i++)
 foreach($absarray as $item )
     echo "$item ";
 echo "<br>";
-
+echo "<br>";
 #Task 7. Общее
 $numdivs = array();
 $number1 = 30;
@@ -121,7 +127,7 @@ while($count <= 10)
     $c++;
 }
 echo $c,"<br>";
-
+echo "<br>";
 #Task 8 - Функции
 function printStringReturnNumber()
 {
@@ -131,20 +137,20 @@ function printStringReturnNumber()
 $my_num2 = printStringReturnNumber();
 echo $my_num2,"<br>";
 
-function increaseEnthusiasm(string $str)
+function increaseEnthusiasm($str)
 {
     return "$str!";
 }
 echo increaseEnthusiasm("Рукописи не горят"), "<br>";
 
-function repeatThreeTimes(string $str)
+function repeatThreeTimes($str)
 {
     return $str.$str.$str;
 }
 echo repeatThreeTimes("Буп"), "<br>";
 echo increaseEnthusiasm(repeatThreeTimes("Га")), "<br>";
 
-function cut(string $str123, int $letters = 10)
+function cut($str123, $letters = 10)
 {
     return substr($str123, 0, $letters);
 }
@@ -163,7 +169,7 @@ function printarray($arr)
 printarray($numarray);
 echo "<br>";
 
-function morethen9sum(int $some) #господи помогите
+function morethen9sum( $some) #господи помогите
 {
     $splitted = str_split($some); # разделяем на отдельные цифры
     $some = array_sum($splitted); # суммируем
@@ -174,6 +180,7 @@ function morethen9sum(int $some) #господи помогите
 }
 echo morethen9sum(954),"<br>";
 
+echo "<br>";
 
 #Task 9 - Массивы
 $arrayhelpme = array();
@@ -187,7 +194,7 @@ foreach($arrayhelpme as $item )
     echo "$item ";
 echo "<br>";
 
-function arrayFill(string $str, int $count)
+function arrayFill($str,  $count)
 {
     $arrayfilled = array();
     for($i = 0; $i < $count;$i++)
@@ -240,7 +247,48 @@ $arrwithsomething = ['a', 'b', 'c', 'd', 'e'];
 echo count($arrwithsomething), "<br>";
 
 echo end($arrwithsomething), prev($arrwithsomething), "<br>";
+echo "<br>";
 
+
+#Task 10 - if/else
+
+function boolfunc( $a, $b)
+{
+    if ($a+$b>10)
+        return true;
+    else
+        return false;
+}
+echo boolfunc(10, 9), "<br>";
+
+function boolfunc2( $a, $b)
+{
+    if ($a == $b)
+        return true;
+    else
+        return false;
+}
+echo boolfunc2(5,5), "<br>";
+
+$test = 0;
+if(!$test) echo "верно<br>";
+
+$age = 55;
+if ($age < 10 or $age > 99)
+    echo "$age is not in [10,99] <br>";
+else
+{
+    $sum = array_sum(str_split($age));
+    if ($sum <= 9)
+        echo "сумма цифр однозначна - $sum";
+    else
+        echo "сумма цифр двузначна - $sum ";
+    echo "<br>";
+}
+
+$nespim = [6, 6, 6];
+if (count($nespim) == 3)
+    echo $nespim[0] + $nespim[1] + $nespim[2], "<br>";
 
 
 
