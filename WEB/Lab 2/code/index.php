@@ -289,6 +289,14 @@ else
 $nespim = [6, 6, 6];
 if (count($nespim) == 3)
     echo $nespim[0] + $nespim[1] + $nespim[2], "<br>";
+echo "<br>";
+
+#Task 11 - Циклы
+for ($i = 1; $i < 21; $i++)
+{
+    for ($j = 0; $j < $i; $j++) echo "x";
+    echo "<br>";
+}
 
 
 
