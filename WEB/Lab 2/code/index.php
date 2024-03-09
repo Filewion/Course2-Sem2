@@ -122,6 +122,66 @@ while($count <= 10)
 }
 echo $c,"<br>";
 
+#Task 8 - Функции
+function printStringReturnNumber()
+{
+    echo "Я — часть той силы, что вечно хочет зла и вечно совершает благо<br>";
+    return 987;
+}
+$my_num2 = printStringReturnNumber();
+echo $my_num2,"<br>";
+
+function increaseEnthusiasm(string $str)
+{
+    return "$str!";
+}
+echo increaseEnthusiasm("Рукописи не горят"), "<br>";
+
+function repeatThreeTimes(string $str)
+{
+    return $str.$str.$str;
+}
+echo repeatThreeTimes("Буп"), "<br>";
+echo increaseEnthusiasm(repeatThreeTimes("Га")), "<br>";
+
+function cut(string $str123, $letters = 10)
+{
+    return substr($str123, 0, $letters);
+}
+$my_string_im_tired = "i can`t feel my eyes";
+echo cut($my_string_im_tired, 10),"<br>";
+
+$numarray = [0,1,2,3,4,5,6,7];
+function printarray($arr)
+{
+    echo array_shift($arr)," ";
+    if (!empty($arr))
+        printarray($arr);
+    else
+        return;
+}
+printarray($numarray);
+echo "<br>";
+
+function morethen9sum($some) #господи помогите
+{
+    $splitted = str_split($some); # разделяем на отдельные цифры
+    $some = array_sum($splitted); # суммируем
+    if ($some > 9)
+        return morethen9sum($some);
+    else
+        return $some;
+}
+echo morethen9sum(954),"<br>";
+
+
+
+
+
+
+
+
+
 
 
 
