@@ -38,7 +38,24 @@ $my_num = 42;
 $answer = $my_num;
 $answer += 2; $answer *= 2; $answer -= 2; $answer /= 2; # места много занимает ;)
 $answer -= $my_num;
-echo $answer; echo "<br>"; #реально 1... 
+echo $answer; echo "<br>"; #реально 1...
+
+#Task 6 - Мат. функции
+# Работа с %
+$a = 10; $b = 3;
+$ostatok = $a % $b;
+$result = $a / $b;
+echo $ostatok; echo "<br>";
+if($ostatok == 0)
+    echo "Делится $result";
+else
+    echo "Делится с остатком $ostatok";
+
+
+
+
+
+
 
 
 
