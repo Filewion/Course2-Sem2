@@ -76,6 +76,12 @@ $my_perfect_array = array("ceil"=>$ceilsqrt,"floor"=>$floorsqrt);
 foreach($my_perfect_array as $item => $num)
     echo "Type - " . $item . ", Value= " . $num, "<br>";
 
+#Работа с min и max
+$numbers = [4,-2,5,19,-130,0,10];
+$minnum = min($numbers); echo "Min = $minnum <br>";
+$maxnum = max($numbers); echo "Max = $maxnum <br>";
+
+
 
 
 
