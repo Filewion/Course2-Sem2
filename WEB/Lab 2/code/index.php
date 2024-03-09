@@ -45,11 +45,24 @@ echo $answer; echo "<br>"; #реально 1...
 $a = 10; $b = 3;
 $ostatok = $a % $b;
 $result = $a / $b;
-echo $ostatok; echo "<br>";
+echo "$ostatok<br>";
 if($ostatok == 0)
-    echo "Делится $result";
+    echo "Делится $result<br>";
 else
-    echo "Делится с остатком $ostatok";
+    echo "Делится с остатком $ostatok<br>";
+
+# Работа со степенью и корнем
+$st = pow(2,10); echo "$st<br>";
+$koren = sqrt(245); echo "$koren<br>";
+
+$array = [4,2,5,19,13,0,10];
+$noway_sum = 0;
+foreach ($array as $iterator)
+    $noway_sum += pow($iterator,2);
+$NOWAY_sum = sqrt($noway_sum);
+echo "$NOWAY_sum<br>";
+
+
 
 
 
