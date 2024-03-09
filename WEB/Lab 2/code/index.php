@@ -88,6 +88,23 @@ for ($i = 0;$i < 10; $i++)
     $randarray[$i] = rand(1,100);
 foreach($randarray as $item )
     echo "$item ";
+echo "<br>";
+
+#Работа с модулем
+$a = 100;
+$b = 101;
+$abs_ = abs($a - $b);
+echo $abs_,"<br>";
+$array1 = [1,2,-1,-2,3,-3];
+$absarray = array();
+for ($i = 0; $i < 6;$i++)
+    $absarray[$i] = abs($array1[$i]);
+foreach($absarray as $item )
+    echo "$item ";
+
+
+
+
 
 
 
