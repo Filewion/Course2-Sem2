@@ -81,6 +81,15 @@ $numbers = [4,-2,5,19,-130,0,10];
 $minnum = min($numbers); echo "Min = $minnum <br>";
 $maxnum = max($numbers); echo "Max = $maxnum <br>";
 
+#Работа с рандомом
+echo rand(1,100),"<br>";
+$randarray = array();
+for ($i = 0;$i < 10; $i++)
+    $randarray[$i] = rand(1,100);
+foreach($randarray as $item )
+    echo "$item ";
+
+
 
 
 
