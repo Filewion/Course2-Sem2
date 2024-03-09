@@ -144,7 +144,7 @@ function repeatThreeTimes(string $str)
 echo repeatThreeTimes("Буп"), "<br>";
 echo increaseEnthusiasm(repeatThreeTimes("Га")), "<br>";
 
-function cut(string $str123, $letters = 10)
+function cut(string $str123, int $letters = 10)
 {
     return substr($str123, 0, $letters);
 }
@@ -163,7 +163,7 @@ function printarray($arr)
 printarray($numarray);
 echo "<br>";
 
-function morethen9sum($some) #господи помогите
+function morethen9sum(int $some) #господи помогите
 {
     $splitted = str_split($some); # разделяем на отдельные цифры
     $some = array_sum($splitted); # суммируем
@@ -175,7 +175,71 @@ function morethen9sum($some) #господи помогите
 echo morethen9sum(954),"<br>";
 
 
+#Task 9 - Массивы
+$arrayhelpme = array();
+$helpstr = "x";
+for($i = 0; $i<5;$i++)
+{
+    array_push($arrayhelpme,$helpstr);
+    $helpstr .= "x";
+}
+foreach($arrayhelpme as $item )
+    echo "$item ";
+echo "<br>";
 
+function arrayFill(string $str, int $count)
+{
+    $arrayfilled = array();
+    for($i = 0; $i < $count;$i++)
+        array_push($arrayfilled,$str);
+    foreach($arrayfilled as $item )
+        echo "$item ";
+}
+arrayFill('x', 5);
+echo "<br>";
+
+$ocherednoi = [[1, 2, 3], [4,5,6,7], [0]];
+$summa = 0;
+foreach ($ocherednoi as $och)
+    foreach ($och as $item)
+        $summa += $item;
+echo $summa, "<br>";
+
+$mass1 = array(); $mass2 = array();
+
+$num1 = 1;
+for ($i = 0; $i < 3; $i++)
+{
+    for ($j = 0; $j < 3;$j++)
+    {
+        $mass2[$j] = $num1;
+        $num1++;
+    }
+    $mass1[$i] = $mass2;
+}
+foreach ($mass1 as $m1)
+{
+    foreach ($m1 as $item)
+    {
+        echo $item." ";
+    }
+}
+echo "<br>";
+
+$esheodin = [2, 5, 3, 9];
+$result = $esheodin[0]*$esheodin[1] + $esheodin[2]*$esheodin[3];
+echo $result, "<br>";
+
+$user = ['name' => 'Pomogite', 'surname' => 'Gospodi', 'patronymic' => 'Mne'];
+echo "{$user['surname']} {$user['name']} {$user['patronymic']}<br>";
+
+$date = ['year' => 2024, 'month' => 3, 'day' => 10]; #ой...
+echo "{$date['year']}-{$date['month']}-{$date['day']}<br>";
+
+$arrwithsomething = ['a', 'b', 'c', 'd', 'e'];
+echo count($arrwithsomething), "<br>";
+
+echo end($arrwithsomething), prev($arrwithsomething), "<br>";
 
 
 
