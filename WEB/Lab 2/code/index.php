@@ -297,6 +297,45 @@ for ($i = 1; $i < 21; $i++)
     for ($j = 0; $j < $i; $j++) echo "x";
     echo "<br>";
 }
+echo "<br>";
+
+#Task 12 - Комбинация функций (благослави господь дочитавшего)
+
+$godblessyou = [2, 4, 3, 4, 5, 9];
+$godsum = array_sum($godblessyou);
+$godcount = count($godblessyou);
+echo $godsum/$godcount, "<br>";
+
+$sum100 = (1+100)*100/2; # арифметическая прогрессия ;)
+echo $sum100, "<br>";
+
+$goodarray = [4,9,16,25,36];
+$newgoodarray = array_map('sqrt',$goodarray); #применяем функцию корня ко всем элементам массива
+foreach($newgoodarray as $item )
+    echo "$item ";
+echo "<br>";
+
+$keys = range('a','z');
+$values = range(1,26);
+$sleepyarray = array_combine($keys,$values); #собираем новый массив из ключей и значений
+foreach($sleepyarray as $item => $num)
+    echo "Letter " . $item . ", Value= " . $num, "<br>";
+echo "<br>";
+
+$finallytheend = "1234567890";
+$finallyarray = str_split($finallytheend,2 );# делим строку по два символа, каждый из них будет элементом массива
+echo array_sum($finallyarray);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
