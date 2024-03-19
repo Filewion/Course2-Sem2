@@ -3,6 +3,9 @@
 # Важно: т.к. проверка написанного осуществлялась на странице сайта
 # то вместо \n(который не осуществлял перенос строки) был использован <br>
 
+# (!) Так же хочу отметить, что я понимаюю, что использование "шуточных" названий переменных
+# ниже не есмь хорошее решение, в следующих лабах они будут информативны.
+
 /* Imagine a lot of code here */
 $very_bad_unclear_name = "15 chicken wings";
 
@@ -52,10 +55,11 @@ $a = 10; $b = 3;
 $ostatok = $a % $b;
 $result = $a / $b;
 echo "$ostatok<br>";
-if($ostatok == 0)
+if(0 === $ostatok) {
     echo "Делится $result<br>";
-else
+} else {
     echo "Делится с остатком $ostatok<br>";
+}
 
 # Работа со степенью и корнем
 $st = pow(2,10); echo "$st<br>";
@@ -70,7 +74,7 @@ echo "$NOWAY_sum<br>";
 
 #Работа с функциями округления
 $opyatkoren = sqrt(379);
-echo round($opyatkoren,0),"<br>";
+echo round($opyatkoren),"<br>";
 echo round($opyatkoren,1),"<br>";
 echo round($opyatkoren,2),"<br>";
 $koren2 = sqrt(587);
@@ -89,7 +93,7 @@ $maxnum = max($numbers); echo "Max = $maxnum <br>";
 
 #Работа с рандомом
 echo rand(1,100),"<br>";
-$randarray = array();
+$randarray = [];
 for ($i = 0;$i < 10; $i++)
     $randarray[$i] = rand(1,100);
 foreach($randarray as $item )
@@ -102,7 +106,7 @@ $b = 101;
 $abs_ = abs($a - $b);
 echo $abs_,"<br>";
 $array1 = [1,2,-1,-2,3,-3];
-$absarray = array();
+$absarray = [];
 for ($i = 0; $i < 6;$i++)
     $absarray[$i] = abs($array1[$i]);
 foreach($absarray as $item )
@@ -110,18 +114,19 @@ foreach($absarray as $item )
 echo "<br>";
 echo "<br>";
 #Task 7. Общее
-$numdivs = array();
+$numdivs = [];
 $number1 = 30;
 for ($i = 1; $i < round(sqrt($number1)) + 1; $i++) #проходим до корня числа, чтобы не повторяться
-    if ($number1 % $i == 0)
+    if (0 === $number1 % $i ) {
         array_push($numdivs, $i, $number1 / $i); #добавляем сам делитель и число/делитель
+    }
 foreach($numdivs as $item )
     echo "$item ";
 echo "<br>";
 
 $array2 = [1,2,3,4,5,6,7,8,9,10];
 $c = 0; $count = 0;
-while($count <= 10)
+while(10 >= $count)
 {
     $count += $array2[$c];
     $c++;
@@ -129,7 +134,7 @@ while($count <= 10)
 echo $c,"<br>";
 echo "<br>";
 #Task 8 - Функции
-function printStringReturnNumber()
+function printStringReturnNumber(): int
 {
     echo "Я — часть той силы, что вечно хочет зла и вечно совершает благо<br>";
     return 987;
@@ -137,20 +142,20 @@ function printStringReturnNumber()
 $my_num2 = printStringReturnNumber();
 echo $my_num2,"<br>";
 
-function increaseEnthusiasm($str)
+function increaseEnthusiasm(string $str) : string
 {
     return "$str!";
 }
 echo increaseEnthusiasm("Рукописи не горят"), "<br>";
 
-function repeatThreeTimes($str)
+function repeatThreeTimes(string $str) : string
 {
     return $str.$str.$str;
 }
 echo repeatThreeTimes("Буп"), "<br>";
 echo increaseEnthusiasm(repeatThreeTimes("Га")), "<br>";
 
-function cut($str123, $letters = 10)
+function cut(string $str123, int $letters = 10) : string
 {
     return substr($str123, 0, $letters);
 }
@@ -158,47 +163,47 @@ $my_string_im_tired = "i can`t feel my eyes";
 echo cut($my_string_im_tired, 10),"<br>";
 
 $numarray = [0,1,2,3,4,5,6,7];
-function printarray($arr)
+function printarray(array $arr)
 {
-    echo array_shift($arr)," ";
-    if (!empty($arr))
+    echo array_shift($arr), " ";
+    if (true === empty($arr)) {
         printarray($arr);
-    else
-        return;
+    }
 }
 printarray($numarray);
 echo "<br>";
 
-function morethen9sum( $some) #господи помогите
+function morethen9sum(int $some) : int #господи помогите
 {
     $splitted = str_split($some); # разделяем на отдельные цифры
     $some = array_sum($splitted); # суммируем
-    if ($some > 9)
+    if (9 < $some) {
         return morethen9sum($some);
-    else
+    } else {
         return $some;
+    }
 }
 echo morethen9sum(954),"<br>";
 
 echo "<br>";
 
 #Task 9 - Массивы
-$arrayhelpme = array();
+$arrayhelpme = [];
 $helpstr = "x";
 for($i = 0; $i<5;$i++)
 {
-    array_push($arrayhelpme,$helpstr);
+    $arrayhelpme[$i] = $helpstr;
     $helpstr .= "x";
 }
 foreach($arrayhelpme as $item )
     echo "$item ";
 echo "<br>";
 
-function arrayFill($str,  $count)
+function arrayFill(string $str,  int $count)
 {
-    $arrayfilled = array();
+    $arrayfilled = [];
     for($i = 0; $i < $count;$i++)
-        array_push($arrayfilled,$str);
+        $arrayfilled[$i] = $str;
     foreach($arrayfilled as $item )
         echo "$item ";
 }
@@ -212,7 +217,7 @@ foreach ($ocherednoi as $och)
         $summa += $item;
 echo $summa, "<br>";
 
-$mass1 = array(); $mass2 = array();
+$mass1 = []; $mass2 = [];
 
 $num1 = 1;
 for ($i = 0; $i < 3; $i++)
@@ -252,43 +257,38 @@ echo "<br>";
 
 #Task 10 - if/else
 
-function boolfunc( $a, $b)
+function boolfunc(int $a, int $b) : bool
 {
-    if ($a+$b>10)
-        return true;
-    else
-        return false;
+    return (10 < $a+$b);
 }
 echo boolfunc(10, 9), "<br>";
 
-function boolfunc2( $a, $b)
+function boolfunc2(int $a, int $b) : bool
 {
-    if ($a == $b)
-        return true;
-    else
-        return false;
+    return ($a === $b);
 }
 echo boolfunc2(5,5), "<br>";
 
-$test = 0;
-if(!$test) echo "верно<br>";
+$test = false;
+if(true == $test) echo "верно<br>";
 
 $age = 55;
-if ($age < 10 or $age > 99)
+if (10 > $age  or 99 < $age) {
     echo "$age is not in [10,99] <br>";
-else
-{
+} else {
     $sum = array_sum(str_split($age));
-    if ($sum <= 9)
+    if (9 >= $sum) {
         echo "сумма цифр однозначна - $sum";
-    else
-        echo "сумма цифр двузначна - $sum ";
+    } else {
+        echo "сумма цифр двузначна - $sum";
+    }
     echo "<br>";
 }
 
 $nespim = [6, 6, 6];
-if (count($nespim) == 3)
+if (3 === count($nespim)) {
     echo $nespim[0] + $nespim[1] + $nespim[2], "<br>";
+}
 echo "<br>";
 
 #Task 11 - Циклы
@@ -304,20 +304,20 @@ echo "<br>";
 $godblessyou = [2, 4, 3, 4, 5, 9];
 $godsum = array_sum($godblessyou);
 $godcount = count($godblessyou);
-echo $godsum/$godcount, "<br>";
+echo $godsum / $godcount, "<br>";
 
-$sum100 = (1+100)*100/2; # арифметическая прогрессия ;)
+$sum100 = (1 + 100) * 100 / 2; # арифметическая прогрессия ;)
 echo $sum100, "<br>";
 
-$goodarray = [4,9,16,25,36];
-$newgoodarray = array_map('sqrt',$goodarray); #применяем функцию корня ко всем элементам массива
-foreach($newgoodarray as $item )
+$goodarray = [4, 9, 16, 25, 36];
+$newgoodarray = array_map('sqrt', $goodarray); #применяем функцию корня ко всем элементам массива
+foreach($newgoodarray as $item)
     echo "$item ";
 echo "<br>";
 
 $keys = range('a','z');
 $values = range(1,26);
-$sleepyarray = array_combine($keys,$values); #собираем новый массив из ключей и значений
+$sleepyarray = array_combine($keys, $values); #собираем новый массив из ключей и значений
 foreach($sleepyarray as $item => $num)
     echo "Letter " . $item . ", Value= " . $num, "<br>";
 echo "<br>";
