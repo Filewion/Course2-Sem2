@@ -15,5 +15,13 @@ foreach($matches[0] as $match)
     echo "$match ";
 }
 
+#Пункт b)
+$str2 = 'a1b2c3'; // Строка с числами
+$regexp2 = '/[0-9]/'; // Регулярное выражение для цифр
+//Ищем в строке цифру и заменяем её на куб с помощью безымянной функции
+$replacedStr = preg_replace_callback($regexp2, function($matches) { return (string)($matches[0]**3); }, $str2);
+echo "<br> b) $replacedStr";
+
+
 
 
