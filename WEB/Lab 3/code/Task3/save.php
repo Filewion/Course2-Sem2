@@ -14,11 +14,6 @@ $category = $_POST['category'];
 $title = $_POST['title'];
 $description = $_POST['description'];
 
-$category = $_POST['category'];
-$title = $_POST['title'];
-$desc = $_POST['description'];
-
-
 
 $filePath = "categories/{$category}/{$title}.txt";
 
