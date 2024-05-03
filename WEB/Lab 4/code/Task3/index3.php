@@ -10,7 +10,6 @@ $service = new Google_Service_Sheets($client);
 $spreadSheetId = "1714BJ58VdDgHyPqUJm_VajIq9ssUU5XVG9C7FDaD_F8";
 
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,7 +17,7 @@ $spreadSheetId = "1714BJ58VdDgHyPqUJm_VajIq9ssUU5XVG9C7FDaD_F8";
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Task 3</title>
+    <title>Lab 4</title>
 </head>
 <body>
 <div id="form">
@@ -54,11 +53,6 @@ $spreadSheetId = "1714BJ58VdDgHyPqUJm_VajIq9ssUU5XVG9C7FDaD_F8";
 <div id="table">
     <table>
         <thead>
-        <th>Category</th>
-        <th>Title</th>
-        <th>Description</th>
-        </thead>
-        <thead>
         <?php
         $headersRange = "mysheet!A1:D1";
         try {
@@ -75,13 +69,13 @@ $spreadSheetId = "1714BJ58VdDgHyPqUJm_VajIq9ssUU5XVG9C7FDaD_F8";
         </thead>
         <tbody>
         <?php
-        $rangeOfAllContent = "mysheet!A2:D999";
+        $range_ = "mysheet!A2:D100";
         try {
-            $rowsArray = $service->spreadsheets_values->get($spreadSheetId, rangeOfAllContent);
+            $array = $service->spreadsheets_values->get($spreadSheetId, $range_);
         } catch (\Google\Service\Exception $e) {
         }
-        if (null != $rowsArray) {
-            foreach ($rowsArray as $row) {
+        if (null != $array) {
+            foreach ($array as $row) {
                 echo "<tr>";
                 foreach ($row as $item) {
                     echo "<td>" . $item . "</td>";

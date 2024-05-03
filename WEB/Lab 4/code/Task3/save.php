@@ -1,6 +1,6 @@
-
 <?php
 require 'index3.php';
+require '../vendor/autoload.php';
 
 $client = new \Google_Client();
 $client->setApplicationName('Lab 4 - Sheets');
@@ -11,7 +11,7 @@ $service = new Google_Service_Sheets($client);
 $spreadSheetId = "1714BJ58VdDgHyPqUJm_VajIq9ssUU5XVG9C7FDaD_F8";
 function redirectToHome() : void
 {
-    header("Location: /");
+    header('Location:index3.php');
     exit();
 }
 
@@ -25,12 +25,21 @@ $category = $_POST['category'];
 $title = $_POST['title'];
 $description = $_POST['description'];
 
-
-$filePath = "categories/{$category}/{$title}.txt";
-
-if (false === file_put_contents($filePath, $description))
+$range = "mysheet";
+$values = [
+    [$category,$email ,$title, $description]
+];
+$body = new Google_Service_Sheets_ValueRange(['values' => $values]);
+$row = sizeof(($service->spreadsheets_values->get($spreadSheetId, $range))->getValues()) + 1;
+$params = [
+    'valueInputOption' => 'RAW'
+];
+try
 {
-    throw new Exception("Something went wrong");
+    $service->spreadsheets_values->update($spreadSheetId, 'mysheet!A'.($row), $body, $params);
 }
-chmod($filePath, 0777);
+catch (\Google\Service\Exception $e)
+{
+    echo "Error";
+}
 redirectToHome();
