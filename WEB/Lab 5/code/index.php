@@ -38,11 +38,6 @@
 </div>
 <div id="table">
     <table>
-        <thead>
-        <th>Category</th>
-        <th>Title</th>
-        <th>Description</th>
-        </thead>
         <tbody>
         <?php
         $sqlBase = new mysqli('db', 'root', 'helloworld', 'web', 3306);
@@ -57,7 +52,7 @@
         foreach ($sqlBase->query("SELECT * FROM web.ad") as $row)
         {
             $email = $row['email']; $category = $row['category']; $title = $row['title']; $description = $row['description'];
-            echo "$category $title $description";
+            echo "$title $description $category";
         }
         ?>
         </tbody>
