@@ -9,6 +9,7 @@ services:
       - ./site.conf:/etc/nginx/conf.d/site.conf # путь до конфигурационного файла
     links: # привязываем сервис
       - php
+      - db
   php:
     build: .
     volumes:
@@ -22,4 +23,4 @@ services:
     ports:
       - '6603:3306'
     environment:
-      MYSQL_ROOT_PASSWORD: helloworld
+       MYSQL_ROOT_PASSWORD: helloworld
