@@ -57,6 +57,7 @@
         foreach ($sqlBase->query("SELECT * FROM web.ad") as $row)
         {
             $email = $row['email']; $category = $row['category']; $title = $row['title']; $description = $row['description'];
+            echo "$category $title $description";
         }
         ?>
         </tbody>
